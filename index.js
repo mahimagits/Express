@@ -17,9 +17,18 @@ app.get("/help", (req, res) => {
     res.send("this is a help path");
 })
 
-app.get("/:username", (req, res) => {
-    let {username} = req.params;
-    let htmlStr = `<h1>Hi, I am ${username}</h1>`;
-    res.send(htmlStr);
+// app.get("/:username", (req, res) => {
+//     let {username} = req.params;
+//     let htmlStr = `<h1>Hi, I am ${username}</h1>`;
+//     res.send(htmlStr);
 
+// })
+
+app.get("/search", (req, res) => {
+    let { q } = req.query;
+    if(!q){
+        res.send("Nothing searched");
+    }else{
+        res.send(`<h1>These are the search query:${q}</h1>`);
+    }
 })
