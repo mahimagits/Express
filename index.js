@@ -10,5 +10,8 @@ app.listen(port, () => {
 
 app.use((req, res) => {
     console.log("request received");
-    res.send("This is a basic response");
+    res.send({
+        fruit : "apple",
+        color : "red",
+    });
 })
