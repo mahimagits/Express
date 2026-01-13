@@ -17,8 +17,8 @@ app.get("/help", (req, res) => {
     res.send("this is a help path");
 })
 
-app.get("/:username/:id", (req, res) => {
-    let {username, id} = req.params;
-    res.send(`Welcome to @${username}`);
+app.get("/:username", (req, res) => {
+    let {username} = req.params;
+    res.send(`Hi! I am ${username}`);
 
 })
