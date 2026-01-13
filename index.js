@@ -10,23 +10,9 @@ app.listen(port, () => {
 
 
 app.get("/", (req, res) => {
-    res.send("You contacted root path");
-})
-
-app.get("/search", (req, res) => {
-    res.send("You contacted search path");
+    res.send("This is a root path");
 })
 
 app.get("/help", (req, res) => {
-    res.send("You contacted help path");
+    res.send("this is a help path");
 })
-
-app.get("*", (req, res) => {
-    res.send("This is not a path"); //Any other path than the above mentioned path
-})
-
-// app.use((req, res) => {
-//     console.log("request received");
-//     let code = "<h1>Fruits</h1><ul><li>apple</li><li>banana</li><li>orange</li></ul>";
-//     res.send(code);
-// })
