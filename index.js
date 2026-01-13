@@ -1,34 +1,14 @@
 const express = require("express");
-
 const app = express();
 
-let port = 3000;
+const port = 8080;
+
+app.set("view engine", "ejs");
+
+app.get("/", (req, res) => {
+    res.render("home.ejs");
+})
 
 app.listen(port, () => {
     console.log(`App is listening at port ${port}`);
-})
-
-
-app.get("/", (req, res) => {
-    res.send("This is a root path");
-})
-
-app.get("/help", (req, res) => {
-    res.send("this is a help path");
-})
-
-// app.get("/:username", (req, res) => {
-//     let {username} = req.params;
-//     let htmlStr = `<h1>Hi, I am ${username}</h1>`;
-//     res.send(htmlStr);
-
-// })
-
-app.get("/search", (req, res) => {
-    let { q } = req.query;
-    if(!q){
-        res.send("Nothing searched");
-    }else{
-        res.send(`<h1>These are the search query:${q}</h1>`);
-    }
 })
