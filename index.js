@@ -19,6 +19,7 @@ app.get("/help", (req, res) => {
 
 app.get("/:username", (req, res) => {
     let {username} = req.params;
-    res.send(`Hi! I am ${username}`);
+    let htmlStr = `<h1>Hi, I am ${username}</h1>`;
+    res.send(htmlStr);
 
 })
