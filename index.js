@@ -8,9 +8,10 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 
 app.get("/ig/:username", (req, res) => {
+    let followers = ["adam", "bob", "charlie", "steve", "john"];
     let { username } = req.params;
     console.log(username);
-    res.render("instagram.ejs", {username});
+    res.render("instagram.ejs", {username, followers});
 })
 
 app.get("/rollDice", (req, res) => {
