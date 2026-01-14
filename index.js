@@ -12,7 +12,8 @@ app.get("/", (req, res) => {
 })
 
 app.get("/rollDice", (req, res) => {
-    res.render("rollDice.ejs");
+    let diceVal = Math.floor(Math.random() * 6) + 1;
+    res.render("rollDice.ejs", { num : diceVal});
 })
 
 app.listen(port, () => {
