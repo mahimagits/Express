@@ -13,6 +13,11 @@ app.get("/ig/:username", (req, res) => {
     res.render("instagram.ejs", {username});
 })
 
+app.get("/rollDice", (req, res) => {
+    let num = Math.floor(Math.random() * 6) + 1;
+    res.render("rollDice.ejs", {num});
+})
+
 app.listen(port, () => {
     console.log(`App is listening at port ${port}`);
 })
