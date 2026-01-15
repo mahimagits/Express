@@ -8,9 +8,11 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 
 app.get("/ig/:username", (req, res) => {
-    let 
+    let {username} = req.params;
     const instaData = require("./data.json");
-    res.render("instagram.ejs", {data: instaData});
+    let data = instaData[username];
+    res.render("instagram.ejs", {data});
+    console.log(data);
 })
 
 app.get("/rollDice", (req, res) => {
